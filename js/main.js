@@ -13,17 +13,32 @@ function getComputerChoice() {
     } else if (choice === 3) {
         return "scissor";
     } else {
-        return "something went wrong"
+        return "something went wrong";
     }
 }
 
-// console.log(getComputerChoice())
-
 // get user choice and convert to lower case. 
-let playerSelection = prompt("Choose your weapon!! Rock!? Paper!? or Scissor!?", "").toLowerCase()
+function playerSelection() {
+    return prompt("Choose your weapon!! Rock!? Paper!? or Scissor!?", "").toLowerCase();
+}
 
-// console.log(playerSelection)
+// A function to decide who won and who lost takes two inputs getComputerChoice and playerSelection
+// rock beats scissor 
+// paper beats rock
+// scissor beats paper
 
+function gameOn(computerChoice, playerChoice) {
+    if (playerChoice === "rock" && computerChoice === "paper") {
+        return `Computer choose ${computerChoice}! You lose!`
+    } else if (playerChoice === "paper" && computerChoice === "scissor") {
+        return `Computer choose ${computerChoice}! You lose!`
+    } else if (playerChoice === "scissor" && computerChoice === "rock") {
+        return `Computer choose ${computerChoice}! You lose!`
+    } else if (playerChoice === computerChoice) {
+        return `Computer choose ${computerChoice}! It's a tie.`
+    } else {
+        return `Computer choose ${computerChoice}! You win!`
+    }
+}
 
-// 
-
+console.log(gameOn(getComputerChoice(),playerSelection()))
