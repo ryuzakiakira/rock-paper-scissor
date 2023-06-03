@@ -7,16 +7,16 @@
 function getComputerChoice() {
     let choice = Math.floor((Math.random() * 3) + 1);
     if (choice === 1) {
-        console.log("rock");
+        return "rock";
     } else if (choice === 2) {
-        console.log("paper");
+        return "paper";
     } else if (choice === 3) {
-        console.log("scissor");
+        return "scissor";
     } else {
-        console.log("something went wrong")
+        return "something went wrong"
     }
 }
 
-// console.log(getComputerChoice())
+console.log(getComputerChoice())
 
-// getComputerChoice()
+
