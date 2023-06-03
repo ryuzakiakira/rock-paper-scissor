@@ -17,6 +17,13 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice())
+// console.log(getComputerChoice())
 
+// get user choice and convert to lower case. 
+let playerSelection = prompt("Choose your weapon!! Rock!? Paper!? or Scissor!?", "").toLowerCase()
+
+// console.log(playerSelection)
+
+
+// 
 
