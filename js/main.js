@@ -26,19 +26,48 @@ function playerSelection() {
 // rock beats scissor 
 // paper beats rock
 // scissor beats paper
+// keep track of the score
 
-function gameOn(computerChoice, playerChoice) {
+let playerScore = 0;
+let computerScore = 0;
+
+function winnerSelection(computerChoice, playerChoice) {
+    
     if (playerChoice === "rock" && computerChoice === "paper") {
+        computerScore += 1
         return `Computer choose ${computerChoice}! You lose!`
     } else if (playerChoice === "paper" && computerChoice === "scissor") {
+        computerScore += 1
         return `Computer choose ${computerChoice}! You lose!`
     } else if (playerChoice === "scissor" && computerChoice === "rock") {
+        computerScore += 1
         return `Computer choose ${computerChoice}! You lose!`
     } else if (playerChoice === computerChoice) {
         return `Computer choose ${computerChoice}! It's a tie.`
+    } else if (playerChoice === "") {
+        return "No input"
     } else {
+        playerScore += 1
         return `Computer choose ${computerChoice}! You win!`
+    }
+}    
+
+// A function that lets the game run for 5 rounds and keeps track of the score
+// loop for 5 times 
+// check who won each time and add 1 to their score 
+// if player score more than computer player win
+// else computer win
+
+function game() {
+    for (let i = 1; i <=5; i++) {
+        console.log(winnerSelection(getComputerChoice(), playerSelection()))
+    }
+    if (playerScore > computerScore) {
+        console.log("You win!")
+    } else {
+        console.log("You Lose!")
     }
 }
 
-console.log(gameOn(getComputerChoice(),playerSelection()))
+game()
+
