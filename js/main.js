@@ -1,8 +1,4 @@
-// A function to get the computer's choice
-// generate a random number from and including 1 and to and including 3
-// if number === 1 choose rock
-// if number === 2 choose paper
-// if number === 3 choose scissor
+ // get the computer's choice
 
 function getComputerChoice() {
     let choice = Math.floor((Math.random() * 3) + 1);
@@ -17,16 +13,16 @@ function getComputerChoice() {
     }
 }
 
-// get user choice and convert to lower case. 
-function playerSelection() {
-    return prompt("Choose your weapon!! Rock!? Paper!? or Scissor!?", "").toLowerCase();
-}
+// get user choice
 
-// A function to decide who won and who lost takes two inputs getComputerChoice and playerSelection
-// rock beats scissor 
-// paper beats rock
-// scissor beats paper
-// keep track of the score
+function playerSelection(e) {
+    if (e.target.nodeName === 'BUTTON') {
+        console.log(target.id);
+        return e.target.id;
+    };
+};
+
+// decide who won and who lost in each round and keeps track of the score, takes two inputs getComputerChoice and playerSelection
 
 let playerScore = 0;
 let computerScore = 0;
@@ -35,39 +31,36 @@ function winnerSelection(computerChoice, playerChoice) {
     
     if (playerChoice === "rock" && computerChoice === "paper") {
         computerScore += 1
-        return `Computer choose ${computerChoice}! You lose!`
+        return `Computer choose ${computerChoice}, you choose ${playerChoice}! You lose!`
     } else if (playerChoice === "paper" && computerChoice === "scissor") {
         computerScore += 1
-        return `Computer choose ${computerChoice}! You lose!`
+        return `Computer choose ${computerChoice}, you choose ${playerChoice}! You lose!`
     } else if (playerChoice === "scissor" && computerChoice === "rock") {
         computerScore += 1
-        return `Computer choose ${computerChoice}! You lose!`
+        return `Computer choose ${computerChoice}, you choose ${playerChoice}! You lose!`
     } else if (playerChoice === computerChoice) {
-        return `Computer choose ${computerChoice}! It's a tie.`
+        return `Computer choose ${computerChoice},you choose ${playerChoice}! It's a tie.`
     } else if (playerChoice === "") {
         return "No input"
     } else {
         playerScore += 1
-        return `Computer choose ${computerChoice}! You win!`
+        return `Computer choose ${computerChoice},you choose ${playerChoice}! You win!`
     }
 }    
 
-// A function that lets the game run for 5 rounds and keeps track of the score
-// loop for 5 times 
-// check who won each time and add 1 to their score 
-// if player score more than computer player win
-// else computer win
+// let the game run for 5 rounds and pick the winner
 
 function game() {
-    for (let i = 1; i <=5; i++) {
-        console.log(winnerSelection(getComputerChoice(), playerSelection()))
-    }
+    // for (let i = 1; i <=5; i++) {
+    //     console.log(winnerSelection(getComputerChoice(), playerSelection))
+    // };
+
+    console.log(winnerSelection(getComputerChoice(), playerSelection()))
     if (playerScore > computerScore) {
         console.log("You win!")
     } else {
         console.log("You Lose!")
     }
-}
+};
 
-game()
-
+window.addEventListener('click', game);
