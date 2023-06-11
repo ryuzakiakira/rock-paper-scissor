@@ -53,33 +53,24 @@ function winnerSelection(computerChoice, playerChoice) {
 // starts the game and pick the winner
 
 function gameStart(event) {
-    // for (let i = 1; i <=5; i++) {
-    //     console.log(winnerSelection(getComputerChoice(), playerSelection(event)))
-    // };
+    const roundWinner = document.querySelector('.roundWinner')
+    roundWinner.innerHTML = `<p>${winnerSelection(getComputerChoice(), playerSelection(event))}</p>`;
 
-    console.log(winnerSelection(getComputerChoice(), playerSelection(event)))
-    // console.log(`${playerScore}  ${computerScore}`)
-    
-
+    const score = document.querySelector('.score')
+    score.innerHTML = `<p>Your Score : ${playerScore} | Computer's Score : ${computerScore}</p>`;
 };
 
-// let game run for 5 rounds
+// reset game run for 5 rounds
 
-// function game() {
-//     let round = 0;
-
-//     while (round <= 4) {
-//         window.addEventListener('click', function(event) {
-//             gameStart(event);
-//         });
-//         round++
-
-//     };
-// };
-
-// game()
-
-window.addEventListener('click', function(event) {
-    gameStart(event);
-});
+    window.addEventListener('click', function(event) {
+        gameStart(event);
+        console.log(`${typeof(computerScore)} || ${typeof(playerScore)}`)
+        if (computerScore === 5 || playerScore === 5) {
+            const winner = document.querySelector('.winner');
+            winner.innerHTML = `<p>${computerScore} || ${playerScore}</p>`;
+            winner.setAttribute('style', 'font-size: 30px')
+            playerScore = 0;
+            computerScore = 0;
+        }
+    });
 

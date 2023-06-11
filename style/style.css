@@ -46,3 +46,7 @@ body {
 .btn:hover {
     scale: 1.25;
 }
+
+.roundWinner {
+    margin: 30px;
+}
