@@ -17,10 +17,19 @@ function getComputerChoice() {
 
 function playerSelection(e) {
     if (e.target.nodeName === 'BUTTON') {
-        console.log(target.id);
+        // console.log(target.id);
         return e.target.id;
     };
 };
+
+// const playerSelection = (e) => {
+//     if (e.target.nodeName === 'BUTTON') {
+//         return e.target.id;
+//     }
+// }
+
+// console.log(playerSelection())
+
 
 // decide who won and who lost in each round and keeps track of the score, takes two inputs getComputerChoice and playerSelection
 
@@ -50,12 +59,12 @@ function winnerSelection(computerChoice, playerChoice) {
 
 // let the game run for 5 rounds and pick the winner
 
-function game() {
+function game(event) {
     // for (let i = 1; i <=5; i++) {
     //     console.log(winnerSelection(getComputerChoice(), playerSelection))
     // };
 
-    console.log(winnerSelection(getComputerChoice(), playerSelection()))
+    console.log(winnerSelection(getComputerChoice(), playerSelection(Event)))
     if (playerScore > computerScore) {
         console.log("You win!")
     } else {
@@ -63,4 +72,6 @@ function game() {
     }
 };
 
-window.addEventListener('click', game);
+document.addEventListener('click', function(event) {
+    game(Event)
+});

@@ -1,0 +1,48 @@
+html {
+    color-scheme: dark;
+}
+
+body {
+    padding: 2.5rem;
+    margin: 1.2rem;
+    font-family: 'Sen', sans-serif;
+}
+
+.heading {
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 50px;
+    margin-bottom: 0px;
+}
+
+.intro {
+    font-size: 30px;
+}
+
+.subtext {
+    font-size: 25px;
+    margin-top: 0px;
+}
+
+.game {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btns {
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    border: none;
+    background: none;
+}
+
+.btn:hover {
+    scale: 1.25;
+}
